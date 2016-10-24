@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 
 
-function Navbar(props) {
+class Navbar extends Component {
 
-    return (
-        <Nav bsStyle="pills" activeKey={props.activePage} onSelect={props.onChange}>
-            <NavItem eventKey={'dashboard'}>Dashboard</NavItem>
-            <NavItem eventKey={'heroes'}>Heroes</NavItem>
-        </Nav>
-    );
+    shouldComponentUpdate(nextProps, nextState) {
+        return (nextProps.activePage === 'dashboard' || nextProps.activePage === 'heroes') ;
+    }
+
+    render(){
+        return (
+            <Nav bsStyle="pills" activeKey={this.props.activePage} onSelect={this.props.onChange}>
+                <NavItem eventKey={'dashboard'}>Dashboard</NavItem>
+                <NavItem eventKey={'heroes'}>Heroes</NavItem>
+            </Nav>
+        );
+    }
+
 }
 
 export default Navbar;

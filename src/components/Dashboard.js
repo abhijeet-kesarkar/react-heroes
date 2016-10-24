@@ -1,15 +1,33 @@
-import React, { Component } from 'react';
-import {Jumbotron, Button } from 'react-bootstrap';
+import React, {Component} from 'react';
+import './Dashboard.css';
+
+import {Jumbotron, Panel, Grid, Row, Col} from 'react-bootstrap';
 
 class Dashboard extends Component {
+
+    showDetails = (hero) => {
+        this.props.onDetail(hero);
+    }
 
     render() {
         return (
             <div>
                 <Jumbotron>
-                    <h1>Dashboard!</h1>
-                    <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <p><Button bsStyle="primary">Learn more</Button></p>
+                    <Grid>
+                        <Row>
+                            {
+                                this.props.heroes.slice(1, 5).map(hero => {
+                                    return (
+                                        <Col xs={6} md={4} key={hero.id} >
+                                            <Panel className="hero-grid" onClick={ (e) => this.showDetails(hero) }>
+                                                {hero.name}
+                                            </Panel>
+                                        </Col>
+                                    );
+                                })
+                            }
+                        </Row>
+                    </Grid>
                 </Jumbotron>
             </div>
         );
