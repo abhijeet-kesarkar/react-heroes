@@ -37,6 +37,18 @@ class App extends Component {
         this.setState({pages});
     }
 
+    removeHero = (removedHero) => {
+        let heroes = this.state.heroes.filter(hero => hero.id != removedHero.id);
+        this.setState({heroes});
+    }
+
+    addHero = (name) => {
+        let heroes = this.state.heroes;
+        let id = heroes.length > 0 ? heroes[heroes.length-1].id + 1 : 1;
+        heroes.push({id, name});
+        this.setState({heroes});
+    }
+
     updateHero = (updatedHero) => {
         let heroes = this.state.heroes.map(hero => hero.id === updatedHero.id? Object.assign(hero, {name: updatedHero.name}) : hero);
         this.setState({heroes});
@@ -66,7 +78,11 @@ class App extends Component {
                             }
                             {
                                 activePage === 'heroes' &&
-                                <Heroes heroes={this.state.heroes} onDetail={this.showDetail}></Heroes>
+                                <Heroes heroes={this.state.heroes}
+                                        onDetail={this.showDetail}
+                                        onAdd={this.addHero}
+                                        onRemove={this.removeHero}>
+                                </Heroes>
                             }
                             {
                                 activePage === 'detail' &&

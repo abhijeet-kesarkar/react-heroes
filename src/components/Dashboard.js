@@ -19,7 +19,7 @@ class Dashboard extends Component {
                                 this.props.heroes.slice(1, 5).map(hero => {
                                     return (
                                         <Col xs={6} md={4} key={hero.id} >
-                                            <Panel className="hero-grid" onClick={ (e) => this.showDetails(hero) }>
+                                            <Panel bsStyle="info" className="hero-grid" onClick={ (e) => this.showDetails(hero) }>
                                                 {hero.name}
                                             </Panel>
                                         </Col>

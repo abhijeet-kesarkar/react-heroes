@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Jumbotron, Button, Form, FormGroup, Col, FormControl, ControlLabel, ButtonToolbar} from 'react-bootstrap';
+import {Jumbotron, Button, Form, FormGroup, Col, FormControl, ControlLabel, ButtonToolbar, Grid} from 'react-bootstrap';
 
 
 class Dashboard extends Component {
@@ -57,13 +57,13 @@ class Dashboard extends Component {
 
         return (
 
-            <div>
+            <Grid>
 
                 <Jumbotron>
-                    <h1>{this.props.hero.name}</h1>
+                    <h1>{this.state.hero.name}</h1>
                     {form}
                 </Jumbotron>
-            </div>
+            </Grid>
         );
     }
 }
