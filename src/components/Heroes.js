@@ -4,7 +4,6 @@ import {
     ListGroup,
     ListGroupItem,
     Button,
-    Well,
     Grid,
     Col,
     Row,
@@ -84,10 +83,10 @@ class Heroes extends Component {
                     <Col sm={6} md={6} lg={6}>
                         {
                             this.state.selectedHero &&
-                            <Well>
+                            <Panel>
                                 <p>{this.state.selectedHero.name} is my HERO</p>
                                 <Button bsStyle="primary" onClick={this.showDetails}>View Details</Button>
-                            </Well>
+                            </Panel>
                         }
                     </Col>
                 </Row>

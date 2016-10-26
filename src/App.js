@@ -70,7 +70,7 @@ class App extends Component {
                             <Navbar onChange={this.setPage} activePage={activePage}></Navbar>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="App-content">
                         <Col>
                             {
                                 activePage === 'dashboard' &&

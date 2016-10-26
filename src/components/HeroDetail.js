@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Jumbotron, Button, Form, FormGroup, Col, FormControl, ControlLabel, ButtonToolbar, Grid} from 'react-bootstrap';
+import {Panel, Button, Form, FormGroup, Col, FormControl, ControlLabel, ButtonToolbar, Grid, Label} from 'react-bootstrap';
 
 
 class Dashboard extends Component {
@@ -28,7 +28,7 @@ class Dashboard extends Component {
                         Id
                     </Col>
                     <Col sm={10}>
-                        <FormControl type="text" placeholder="Id" value={this.state.hero.id} readOnly/>
+                        <h4><Label>{this.state.hero.id} </Label></h4>
 
                     </Col>
                 </FormGroup>
@@ -59,10 +59,10 @@ class Dashboard extends Component {
 
             <Grid>
 
-                <Jumbotron>
+                <Panel>
                     <h1>{this.state.hero.name}</h1>
                     {form}
-                </Jumbotron>
+                </Panel>
             </Grid>
         );
     }
