@@ -1,4 +1,17 @@
 .hero-grid{
     height: 150px;
     width: 150px;
+    line-height: 150px;
+    background-color: #00b3ee;
+    text-align: center;
+    margin: 10px;
+}
+
+.hero-grid h2{
+    color: #ffffff;
+    display: inline-block;
+}
+
+.form-control{
+    display: inline-flex;
 }

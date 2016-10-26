@@ -4,7 +4,7 @@ import {Nav, NavItem} from 'react-bootstrap';
 
 class Navbar extends Component {
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps) {
         return (nextProps.activePage === 'dashboard' || nextProps.activePage === 'heroes');
     }
 

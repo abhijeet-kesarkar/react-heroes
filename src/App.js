@@ -38,7 +38,7 @@ class App extends Component {
     }
 
     removeHero = (removedHero) => {
-        let heroes = this.state.heroes.filter(hero => hero.id != removedHero.id);
+        let heroes = this.state.heroes.filter(hero => hero.id !== removedHero.id);
         this.setState({heroes});
     }
 
