@@ -1,7 +1,7 @@
 import  React, {Component} from 'react';
 import './Dashboard.css';
 
-import {Jumbotron, Panel, Grid, Row, Col, FormControl, Button, ListGroup, ListGroupItem} from 'react-bootstrap';
+import {Panel, Grid, Row, Col, FormControl, ListGroup, ListGroupItem} from 'react-bootstrap';
 
 class Dashboard extends Component {
 
